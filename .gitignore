@@ -25,5 +25,5 @@ nbdist/
 
 ### mvn ###
 mvnw
-mvnw.cmd
 .mvn
+/mvnw.cmd
