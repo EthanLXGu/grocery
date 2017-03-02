@@ -15,7 +15,7 @@ import java.util.Date;
 @Controller
 public class ProductController {
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String home(Model model) {
         Calendar now = Calendar.getInstance();
         Date date = now.getTime();

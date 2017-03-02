@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Spring boot - simple login</h1>
+    <h3 th:text=" 'Login name: ' + ${name}"></h3>
+    <a href="/logout">logout</a>
+</body>
+</html>
