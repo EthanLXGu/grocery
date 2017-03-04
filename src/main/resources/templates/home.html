@@ -7,8 +7,16 @@
             href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
 </head>
 <body>
-    <p th:utext="#{home.welcome}">Welcome to our grocery store!</p>
+    <p th:utext="#{home.welcome} + ' ' + ${name}">Welcome to our grocery store!</p>
     <p>Today is: <span th:text="${today}">28 February 2017</span></p>
-    <p>Test11</p>
+    <p>Please select an option</p>
+    <ol>
+        <li><a href="product/list.html" th:href="@{/product/list}">Product List</a></li>
+        <li><a href="order/list.html" th:href="@{/order/list}">Order List</a></li>
+        <li><a href="subscribe.html" th:href="@{/subscribe}">Order Lis</a></li>
+        <li><a href="userprofile.html" th:href="@{/userprofile}">See User Profile</a></li>
+    </ol>
+    Established locale country: <span th:text="${#locale.country}">US</span>.
+    <a href="/logout">logout</a>
 </body>
 </html>

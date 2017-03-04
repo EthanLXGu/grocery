@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter{
 
         // exclude setting
         addInterceptor.excludePathPatterns("/error");
-        addInterceptor.excludePathPatterns("/home");
+//        addInterceptor.excludePathPatterns("/home");
         addInterceptor.excludePathPatterns(("/login**"));
 
         // filter settings

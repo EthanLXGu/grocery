@@ -3,55 +3,36 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Login Page</title>
-    <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
-    <script type="text/javascript">
-        /*<![CDATA[*/
-        var app = angular.module('app', []);
-        app.controller('LoginController', function($rootScope, $scope, $http) {
-            $scope.message = '';
-            $scope.name = 'user';
-            $scope.password = '123456';
-            //登录
-            $scope.login = function() {
-                $scope.message = '';
-                $http(
-                    {
-                        url : '/loginGrocery',
-                        method : 'POST',
-                        headers : {
-                            'Content-Type' : 'application/x-www-form-urlencoded'
-                        },
-                        data : 'name=' + $scope.name + '&password='
-                        + $scope.password
-                    }).success(function(r) {
-                    if (!r.success) {
-                        $scope.message = r.message;
-                        return;
-                    }
-                    window.location.href = '/';
-                });
-            }
-        });
-        /*]]>*/
-    </script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
 </head>
-<body ng-app="app" ng-controller="LoginController">
+<body>
 <h1>Spring boot - simple login</h1>
-
-<table cellpadding="1" style="background-color: #a0c6e5">
+<div id="app-date">
+    <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+    </span>
+</div>
+<div id="app-table">
+<table cellpadding="1" style="background-color: #a0c6e5" >
     <tr>
-        <td>Name: </td>
-        <td><input type="text" ng-model="name"/></td>
+        <td>Name:</td>
+        <td><input type="text" v-model="name"/></td>
     </tr>
 
     <tr>
-        <td>Password: </td>
-        <td><input type="password" ng-model="password"/></td>
+        <td>Password:</td>
+        <td><input type="password" v-model="password"/></td>
     </tr>
+
 </table>
-    <input type="button" value="Login" ng-click="login()"/>
-    <br />
-    <font color="red" ng-show="message">{{message}}</font>
-    <br />
+    <input type="button" value="Login" v-on:click="login"/>
+    <input v-model="message" />
+</div>
+
+<br/>
+<font color="red" ><div id="app">{{message}}</div></font>
+<br/>
+<script src="js/login.js"></script>
 </body>
 </html>
