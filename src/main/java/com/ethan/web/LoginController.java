@@ -21,7 +21,7 @@ public class LoginController {
     @GetMapping("/")
     public String index(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String name, Model model) {
         model.addAttribute("name", name);
-        return "index";
+        return "home";
     }
 
     @GetMapping("/login")

@@ -18,10 +18,10 @@ public class Product {
     @Column(name = "price")
     public Float price;
 
-    @Column(name = "inStock")
+    @Column(name = "in_stock")
     public Boolean inStock;
 
-    @Column(name = "comment")
+    @Column(name = "comments")
     public String comment;
 
     public Product(String name, Float price, Boolean inStock, String comment) {
@@ -29,6 +29,9 @@ public class Product {
         this.price = price;
         this.inStock = inStock;
         this.comment = comment;
+    }
+
+    public Product() {
     }
 
     public Long getId() {
@@ -70,4 +73,5 @@ public class Product {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
 }

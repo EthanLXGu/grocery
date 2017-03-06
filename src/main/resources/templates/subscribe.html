@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Subscribe Page</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
+</head>
+<body>
+
+<form action="home.html" id="subscribe-form">
+    <fieldset>
+        <input type="text" name="email" placeholder="input email address" v-model="email"/>
+        <input type="button" value="Subscribe!" v-on:click="subscribe"/>
+    </fieldset>
+</form>
+
+<script src="js/subscribe.js"></script>
+</body>
+</html>

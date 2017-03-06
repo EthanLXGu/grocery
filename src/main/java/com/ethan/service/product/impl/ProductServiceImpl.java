@@ -4,12 +4,14 @@ import com.ethan.dao.api.ProductRepository;
 import com.ethan.domain.Product;
 import com.ethan.service.product.api.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by lingxingu on 2017/2/27.
  */
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
